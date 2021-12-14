@@ -3,8 +3,9 @@ function average(numbers) {
   return (
     numbers.reduce((p, c) => {
       if (isNaN(c)) {
-        p += 0;
-        return (len -= 1);
+        len -= 1;
+
+        return (p += 0);
       } else {
         return (p += c);
       }
