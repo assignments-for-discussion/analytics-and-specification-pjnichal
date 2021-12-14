@@ -1,8 +1,14 @@
 function average(numbers) {
+  var len = numbers.length;
   return (
     numbers.reduce((p, c) => {
-      return isNaN(c) ? p + 0 : p + c;
-    }, 0) / numbers.length
+      if (isNaN(c)) {
+        p += 0;
+        return (len -= 1);
+      } else {
+        return (p += c);
+      }
+    }, 0) / len
   );
 }
 
